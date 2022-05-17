@@ -1,0 +1,35 @@
+ishikopath = envvar("ISHIKO_CPP");
+import $(ishikopath)/test-framework/include/Ishiko/TestFramework/Core.bkl;
+import $(ishikopath)/yaml/include/Ishiko/YAML.bkl;
+
+toolsets = gnu vs2019 vs2017 vs2015 vs2013;
+
+gnu.makefile = ../gnumake/GNUmakefile;
+vs2019.solutionfile = ../vc16/IshikoYAMLTests.sln;
+vs2017.solutionfile = ../vc15/IshikoYAMLTests.sln;
+vs2015.solutionfile = ../vc14/IshikoYAMLTests.sln;
+vs2013.solutionfile = ../vc12/IshikoYAMLTests.sln;
+
+program IshikoYAMLTests : IshikoYAML, IshikoTestFrameworkCore
+{
+    archs = x86 x86_64;
+
+    if ($(toolset) == gnu)
+    {
+        cxx-compiler-options = "-std=c++11";
+        libs += IshikoTestFrameworkCore IshikoYAML IshikoFileSystem IshikoProcess IshikoText IshikoErrors boost_filesystem;
+    }
+
+    headers
+    {
+        ../../src/YAMLPushParserTests.hpp
+        ../../src/helpers/YAMLPushParserTestCallbacks.hpp
+    }
+
+    sources
+    {
+        ../../src/main.cpp
+        ../../src/YAMLPushParserTests.cpp
+        ../../src/helpers/YAMLPushParserTestCallbacks.cpp
+    }
+}
