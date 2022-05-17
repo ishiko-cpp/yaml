@@ -89,6 +89,8 @@ bool YAMLPushParser::onData(boost::string_view data, bool eod)
                         m_callbacks.onKey(boost::string_view(previous, (current - previous)));
                         m_fragmentedData.clear();
                     }*/
+                    // TODO: this should be set in a separate state
+                    previous = current;
                     break;
                 }
                 ++current;

@@ -11,6 +11,11 @@ void YAMLPushParserTestCallbacks::onKey(boost::string_view data)
     m_events.emplace_back(EventType::key, data.to_string());
 }
 
+void YAMLPushParserTestCallbacks::onString(boost::string_view data)
+{
+    m_events.emplace_back(EventType::stringScalar, data.to_string());
+}
+
 const std::vector<std::pair<YAMLPushParserTestCallbacks::EventType, std::string>>&
 YAMLPushParserTestCallbacks::events() const
 {

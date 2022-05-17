@@ -22,6 +22,7 @@ public:
     };
 
     void onKey(boost::string_view data) override;
+    void onString(boost::string_view data) override;
 
     const std::vector<std::pair<EventType, std::string>>& events() const;
 
