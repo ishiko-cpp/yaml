@@ -1,3 +1,7 @@
+ishikopath = envvar("ISHIKO_CPP");
+import $(ishikopath)/text/include/Ishiko/Text.bkl;
+import $(ishikopath)/third-party-glue/include/Ishiko/ThirdParty/Boost.bkl;
+
 toolsets = gnu vs2019 vs2017 vs2015 vs2013;
 
 gnu.makefile = ../gnumake/GNUmakefile;
@@ -6,7 +10,7 @@ vs2017.solutionfile = ../vc15/IshikoYAML.sln;
 vs2015.solutionfile = ../vc14/IshikoYAML.sln;
 vs2013.solutionfile = ../vc12/IshikoYAML.sln;
 
-library IshikoYAML
+library IshikoYAML : IshikoText, Boost
 {
     archs = x86 x86_64;
 
