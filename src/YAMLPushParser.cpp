@@ -5,3 +5,10 @@
 */
 
 #include "YAMLPushParser.hpp"
+
+using namespace Ishiko;
+
+YAMLPushParser::YAMLPushParser(Callbacks& callbacks)
+    : m_callbacks(callbacks)
+{
+}
