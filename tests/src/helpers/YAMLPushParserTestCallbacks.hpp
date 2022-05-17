@@ -17,8 +17,11 @@ class YAMLPushParserTestCallbacks : public Ishiko::YAMLPushParser::Callbacks
 public:
     enum EventType
     {
+        key,
+        stringScalar
     };
 
+    void onKey(boost::string_view data) override;
 
     const std::vector<std::pair<EventType, std::string>>& events() const;
 
