@@ -4,8 +4,8 @@
     See https://github.com/ishiko-cpp/yaml/blob/main/LICENSE.txt
 */
 
-#ifndef _ISHIKO_CPP_JSON_TESTS_YAMLPUSHPARSERTESTS_HPP_
-#define _ISHIKO_CPP_JSON_TESTS_YAMLPUSHPARSERTESTS_HPP_
+#ifndef _ISHIKO_CPP_YAML_TESTS_YAMLPUSHPARSERTESTS_HPP_
+#define _ISHIKO_CPP_YAML_TESTS_YAMLPUSHPARSERTESTS_HPP_
 
 #include <Ishiko/TestFramework/Core.hpp>
 
