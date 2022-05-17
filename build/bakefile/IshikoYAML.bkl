@@ -10,7 +10,7 @@ library IshikoYAML
 {
     archs = x86 x86_64;
 
-    includedirs += ../../include/Ishiko/JSON;
+    includedirs += ../../include/Ishiko/YAML;
 
     if ($(toolset) == gnu)
     {
