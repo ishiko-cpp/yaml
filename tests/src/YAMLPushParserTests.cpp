@@ -29,7 +29,7 @@ void YAMLPushParserTests::ConstructorTest1(Test& test)
 
 void YAMLPushParserTests::OnDataMappingTest1(Test& test)
 {
-    boost::filesystem::path inputPath = test.context().getTestDataPath("mapping1.yaml");
+    boost::filesystem::path inputPath = test.context().getDataPath("mapping1.yaml");
     std::string jsonData = FileSystem::ReadFile(inputPath);
 
     YAMLPushParserTestCallbacks callbacks;
