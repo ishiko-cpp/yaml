@@ -1,7 +1,7 @@
 setting ISHIKO_CPP_YAML_ROOT
 {
-    help = "Path to the Ishiko YAML installation";
-    default = '$(ISHIKO_CPP)/yaml';
+    help = "Path to the Ishiko/C++ YAML installation";
+    default = '$(ISHIKO_CPP_ROOT)/yaml';
 }
 
 template IshikoYAML
