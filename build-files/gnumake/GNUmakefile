@@ -88,7 +88,7 @@ all: ../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoYAML-d,I
 	$(RANLIB) $@
 
 $(_builddir)IshikoYAML_YAMLPushParser.o: ../../src/YAMLPushParser.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I../../include/Ishiko/YAML -std=c++11 ../../src/YAMLPushParser.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I../../include/Ishiko/YAML -std=c++11 ../../src/YAMLPushParser.cpp
 
 clean:
 	rm -f $(_builddir)*.o
