@@ -39,6 +39,7 @@ endif
 #
 #      ISHIKO_CPP_BASEPLATFORM_ROOT  Path to the Ishiko/C++ BasePlatform installation
 #      ISHIKO_CPP_ERRORS_ROOT        Path to the Ishiko/C++ Errors installation
+#      ISHIKO_CPP_FMT_ROOT           Path to the fmt installation
 #      ISHIKO_CPP_MEMORY_ROOT        Path to the Ishiko/C++ Memory installation
 #      ISHIKO_CPP_BOOST_ROOT         Path to the Boost installation
 #      ISHIKO_CPP_TEXT_ROOT          Path to the Ishiko/C++ Text installation
@@ -72,6 +73,8 @@ endif
 ISHIKO_CPP_BASEPLATFORM_ROOT ?= $(ISHIKO_CPP_ROOT)/base-platform
 # Path to the Ishiko/C++ Errors installation
 ISHIKO_CPP_ERRORS_ROOT ?= $(ISHIKO_CPP_ROOT)/errors
+# Path to the fmt installation
+ISHIKO_CPP_FMT_ROOT ?= $(FMT_ROOT)
 # Path to the Ishiko/C++ Memory installation
 ISHIKO_CPP_MEMORY_ROOT ?= $(ISHIKO_CPP_ROOT)/memory
 # Path to the Boost installation
@@ -88,7 +91,7 @@ all: ../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoYAML-d,I
 	$(RANLIB) $@
 
 $(_builddir)IshikoYAML_YAMLPushParser.o: ../../src/YAMLPushParser.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I../../include/Ishiko/YAML -std=c++11 ../../src/YAMLPushParser.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I../../include/Ishiko/YAML -std=c++11 ../../src/YAMLPushParser.cpp
 
 clean:
 	rm -f $(_builddir)*.o
